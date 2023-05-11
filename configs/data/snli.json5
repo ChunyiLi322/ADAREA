@@ -1,0 +1,28 @@
+{
+    data_dir: 'data/snli',
+    output_dir: 'snli',
+    metric: 'acc',
+    watch_metrics: [],
+
+    model: {
+        enc_layers: 2,
+        blocks: 3,
+    },
+
+    routine: {
+        eval_per_samples: 6412800,
+        eval_warmup_samples: 2560000,
+        eval_per_samples_warmup: 256000,
+        min_samples: 2560000,
+        tolerance_samples: 1280000,
+    },
+
+    optim: {
+        lr: 0.002,
+        min_lr: 1e-4,
+        lr_decay_samples: 128000,
+        lr_decay_rate: 0.94,
+        batch_size: 512,
+        lr_warmup_samples: 1024000,
+    },
+}
